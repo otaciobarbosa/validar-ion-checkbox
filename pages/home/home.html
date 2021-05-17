@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+  <ion-item>
+    <ion-label>PRIMEIRO</ion-label>
+    <ion-select 
+      [(ngModel)]="pro.project1" 
+      (ionChange)="projectOne($event)"
+       required >
+      <ion-option *ngFor="let project of projects" value="{{project}}">{{project}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+  <ion-list>
+  <ion-item>
+    <ion-label>SEGUNDO</ion-label>
+    <ion-select 
+      [(ngModel)]="pro.project2" 
+      (ionChange)="projectTwo($event)"
+       required >
+      <ion-option *ngFor="let project of projects" value="{{project}}">{{project}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+  <ion-list>
+  <ion-item>
+    <ion-label>TERCEIRO</ion-label>
+    <ion-select 
+      [(ngModel)]="pro.project3" 
+      (ionChange)="projectThree($event)"
+       required >
+      <ion-option *ngFor="let project of projects" value="{{project}}">{{project}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<button *ngIf="project" ion-button (click)="reset()">clear</button>
+
+</ion-content>
